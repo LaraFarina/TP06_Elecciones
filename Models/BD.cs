@@ -1,9 +1,9 @@
 using System.Data.SqlClient;
 using Dapper;
 
-class db
+class BD
 {
-    private static string _connectionString = @"Server=localhost;DataBase=(Nombre Base de Datos);Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=Elecciones2023;Trusted_Connection=True;";
 
     public static void AgregarCandidato(Candidato candidato)
     {
