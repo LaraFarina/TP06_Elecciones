@@ -1,4 +1,4 @@
-class Candidato{
+public class Candidato{
 
 public int IdCandidato {get;set;}
 
