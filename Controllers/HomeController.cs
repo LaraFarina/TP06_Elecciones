@@ -26,11 +26,11 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-   /* public IActionResult GuardarCandidato(Candidato candidato)
+    public IActionResult GuardarCandidato(Candidato candidato)
     { 
         BD.AgregarCandidato(candidato);
         return RedirectToAction("VerDetallePartido", new { idPartido = candidato.IdPartido});
-    } */
+    } 
     public IActionResult EliminarCandidato(int idCandidato, int IdPartido)
     { 
         BD.EliminarCandidato(idCandidato);
