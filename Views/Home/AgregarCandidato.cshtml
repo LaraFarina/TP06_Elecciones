@@ -1,0 +1,22 @@
+<body>
+    <header>
+        <nav>
+            <a class="otros" href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:100px"></a>
+            <a class="otros" href='@Url.Action("Elecciones")'>Elecciones</a>
+            <a class="otros" href='@Url.Action("Creditos")'>Créditos</a>
+        </nav>
+    </header>
+    <article>
+    
+    <form method="post" action = '@Url.Action("GuardarCandidato")'>
+        <input type="hidden" name = "IdPartido" value = "@ViewBag.idPartido"><br>
+        <p>Link de la foto del Candidato: </p><input type="text" name="Foto"><br>
+        <p>Apellido: </p><input type="text" name = "Apellido"><br>
+        <p>Nombre: </p><input type="text" name = "Nombre"><br>
+        <p>Fecha de Nacimiento: </p><input type="date" name = "FechaNacimiento"><br>
+        <p>Postulación: </p><input type="text" name = "Postulacion"><br><br>
+        <input type="submit" value="Subir">
+    </form>
+    
+    </article>
+</body>

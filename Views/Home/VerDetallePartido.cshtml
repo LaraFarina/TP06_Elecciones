@@ -1,0 +1,39 @@
+<body>
+    <header>
+        <nav>
+            <a class="otros" href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:70px"></a>
+            <a class="otros" href='@Url.Action("Elecciones")'>Elecciones</a>
+            <a class="otros" href='@Url.Action("Creditos")'>Créditos</a>
+        </nav>
+    </header>
+    <article>
+    <p>Nombre: @ViewBag.detallePartido.Nombre</p>
+    <img src = "\img\Logos\@ViewBag.detallePartido.Logo" width="300px"><br>
+    <a href='@ViewBag.detallePartido.SitioWeb'>Sitio Web</a>
+    <p>Fecha de Fundacion: @ViewBag.detallePartido.FechaFundacion</p>
+    <p>Cantidad de Diputados: @ViewBag.detallePartido.CantidadDiputados</p>
+    <p>Cantidad de Senadores: @ViewBag.detallePartido.CantidadSenadores</p>
+    <br><br>
+    <a class="otros" href='@Url.Action("AgregarCandidato", new{ idPartido = @ViewBag.detallePartido.IdPartido} )'>Agregar Candidato</a>
+    <br><br><br>
+    <div class="partidos">
+    @for (int i = 0; i < ViewBag.detalleCandidato.Count; i++)
+    {
+        
+    <div class="cardidatos">
+        <img src="\img\Candidatos\@ViewBag.detalleCandidato[i].Foto" alt="@ViewBag.detalleCandidato[i].Nombre" style="width:200px;">
+        <div class="container">
+            <h4><b>@ViewBag.detalleCandidato[i].Apellido</b> <b>@ViewBag.detalleCandidato[i].Nombre</b></h4>
+            <a  class ="ono" href='@Url.Action("VerDetalleCandidato", new { idCandidato = ViewBag.detalleCandidato[i].IdCandidato})'>Ver más</a><br><br>
+            <a  class ="ono" href='@Url.Action("EliminarCandidato", new { idCandidato = ViewBag.detalleCandidato[i].IdCandidato, idPartido = @ViewBag.detallePartido.IdPartido})'>Eliminar Candidato</a>
+        </div>
+    </div>
+           
+    }
+    </div>
+    <br><br>
+
+    
+    </article>
+
+</body>

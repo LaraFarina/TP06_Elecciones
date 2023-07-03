@@ -1,5 +1,25 @@
-﻿@{
-    ViewData["Title"] = "Index";
-}
+﻿<body>
+    <header>
+        <nav>
+            <a class="otros" href='@Url.Action("Index")'><img src="/img/banderaArg.webp" style="width:70px"></a>
+            <a class="otros" href='@Url.Action("Elecciones")'>Elecciones</a>
+            <a class="otros" href='@Url.Action("Creditos")'>Créditos</a>
+        </nav>
+    </header>
+    <article>
+    
+    <div class="partidos">
+    @for (int i = 0; i < ViewBag.detallePartido.Count; i++)
+        {            
+        <div class="card">
+            <img src="\img\Logos\@ViewBag.detallePartido[i].Logo" style="width:400px">
+            <div class="container">
+                <h2><b>@ViewBag.detallePartido[i].Nombre</b></h2>
+                <a class ="ono" href='@Url.Action("VerDetallePartido", new { idPartido = ViewBag.detallePartido[i].IdPartido})'>Ver más</a>
+            </div>
+        </div>    
+        }
+    </div>
 
-<h1>TP XX - Index</h1>
+    </article>
+</body>
