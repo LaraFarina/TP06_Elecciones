@@ -1,0 +1,29 @@
+<div>
+    <section class="datosPartido">
+        <div>
+            <img src="@ViewBag.detallePartido.Logo">
+        </div>
+        <div class="especificaciones">
+            <h1>@ViewBag.detallePartido.Nombre</h1>
+            <p>Click <a href="@ViewBag.detallePartido.SitioWeb" target="_blank">aquí </a>para más información</p>
+            <p><b>Fecha de fundación:</b>@ViewBag.detallePartido.FechaFundacion.ToShortDateString()</p>
+            <p><b>Cantidad de senadores:</b>@ViewBag.detallePartido.CantidadSenadores</p>
+            <p><b>Cantidad de diputados:</b>@ViewBag.detallePartido.CantidadDiputados</p>
+        </div>
+    </section>
+    <ul class="lista-candidatos">
+        @foreach (Candidato item in ViewBag.partidoCandidato)
+        {
+            <li>
+                <div>
+                    <a href='@Url.Action("VerDetalleCandidato", new {idCandidato = item.IdCandidato})'>
+                    <h1>@item.Nombre @item.Apellido</h1>
+                    <img src="@item.Foto">
+                    </a>
+                    <a href='@Url.Action("EliminarCandidato",new {idCandidato = item.IdCandidato,idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg" class="tacho"></a>
+                </div>
+            </li>
+        }
+        <a class="agregarP" href='@Url.Action("AgregarCandidato",new {idPartido=@ViewBag.detallePartido.IdPartido})'><img src="~/img/agregar.png"></a>
+    </ul>
+</div>

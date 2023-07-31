@@ -1,0 +1,26 @@
+﻿<div>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>TP 06 - Elecciones</h1>
+    <main class="listasPartidos">
+        @foreach (Partido item in ViewBag.ListaPartido)
+        {
+            <section>
+                <div>
+                    <a href='@Url.Action("VerDetallePartido",new {idPartido = item.IdPartido})'>
+                    <img src="@item.Logo">
+                    <h1>@item.Nombre</h1>
+                    </a>
+                </div>
+                <div>
+                    <a href='@Url.Action("EliminarPartido",new {idPartido=item.IdPartido})'><img src="~/img/tachoBasura.jpg"></a>
+                </div>
+            </section>
+        }
+        <div class="agregarP"><a href='@Url.Action("AgregarPartido")'><img src="~/img/agregar.png"></a></div>
+   </main>
+    
+
+</div>

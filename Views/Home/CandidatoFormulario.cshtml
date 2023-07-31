@@ -1,0 +1,14 @@
+<div class="formulario">
+    
+    
+    <form action='@Url.Action("GuardarCandidato")' method="post"> 
+        
+        <div class="formulario"><h3>Nombre:</h3><input type="text" name="Nombre"><br></div>
+        <div class="formulario"><h3>Apellido:</h3><input type="text" name="Apellido"><br></div>
+        <div class="formulario"><h3>Fecha de Nacimiento:</h3><input type="date" name="FechaNacimiento"><br></div>
+        <div class="formulario"><h3>Foto:</h3><input type="text" name="Foto"><br></div>
+        <div class="formulario"><h3>Postulacion:</h3><input type="text" name="Postulacion"><br></div>
+        <div class="formulario"><input type="submit" value="Agregar Candidato"></div>
+        <div><input type="hidden" name="idPartido" value="@ViewBag.ListaIdPartidos"><br></div>
+    </form>
+</div>
